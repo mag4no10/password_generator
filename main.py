@@ -2,6 +2,7 @@
 
 import random
 import string
+import secrets
 from subprocess import Popen,PIPE
 
 def password_generator(length,spc_chars=False):
@@ -9,7 +10,7 @@ def password_generator(length,spc_chars=False):
         characters = string.ascii_letters + string.digits + string.punctuation
     else:
         characters = string.ascii_letters + string.digits
-    password = "".join(random.choice(characters) for i in range(length))
+    password = "".join(secrets.choice(characters) for i in range(length))
     return password
 
 def out(password,length):
